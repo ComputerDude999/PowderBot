@@ -13,8 +13,8 @@ def mail(send_to, text):
         subject=u'Powder in stock',
         text_body=text
     )
-    envelope.send('smtp.googlemail.com', login='powderbot812@gmail.com',
-                  password='uoRdD48CokP3', tls=True)
+    #envelope.send('smtp.googlemail.com', login='powderbot812@gmail.com',
+    #              password='uoRdD48CokP3', tls=True)
 
 
 def check_varget_powdervalley(browser):
@@ -24,8 +24,6 @@ def check_varget_powdervalley(browser):
     Select(browser.find_element(By.ID, "pa_options")).select_by_value("hodgdon-varget-1")
     element = browser.find_element(By.CLASS_NAME, "stock")
     if element.text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("Powder Valley has Varget 1 pound at " + url))
     # 8-pound
     url = 'https://www.powdervalleyinc.com/product/hodgdon-varget/'
@@ -33,9 +31,7 @@ def check_varget_powdervalley(browser):
     Select(browser.find_element(By.ID, "pa_options")).select_by_value("hodgdon-varget-8")
     element = browser.find_element(By.CLASS_NAME, "stock")
     if element.text != "Out of stock":
-        pass
-    else:
-        mail("cshreck1@gmail.com", ("Powder Valley has Varget 8 pound at " + url))
+       mail("cshreck1@gmail.com", ("Powder Valley has Varget 8 pound at " + url))
 
 
 def check_h4895_powdervalley(browser):
@@ -45,8 +41,6 @@ def check_h4895_powdervalley(browser):
     Select(browser.find_element(By.ID, "pa_options")).select_by_value("hodgdon-h4895-1")
     element = browser.find_element(By.CLASS_NAME, "stock")
     if element.text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("Powder Valley has H4895 1 pound at " + url))
     # 8-pound
     url = 'https://www.powdervalleyinc.com/product/hodgdon-h4895/'
@@ -54,8 +48,6 @@ def check_h4895_powdervalley(browser):
     Select(browser.find_element(By.ID, "pa_options")).select_by_value("hodgdon-h4895-8")
     element = browser.find_element(By.CLASS_NAME, "stock")
     if element.text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("Powder Valley has H4895 8 pound at " + url))
 
 
@@ -66,8 +58,6 @@ def check_varget_midwayusa(browser):
     browser.find_element(By.CLASS_NAME, "product-filter-heading-container").click()
     elements = browser.find_elements(By.CLASS_NAME, "product-filter-status")
     if elements[0].text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("MidwayUSA has Varget 1 pound at " + url))
     # 8-pound
     url = 'https://www.midwayusa.com/product/1009281345?pid=963843'
@@ -75,8 +65,6 @@ def check_varget_midwayusa(browser):
     browser.find_element(By.CLASS_NAME, "product-filter-heading-container").click()
     elements = browser.find_elements(By.CLASS_NAME, "product-filter-status")
     if elements[1].text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("MidwayUSA has Varget 8 pound at " + url))
 
 
@@ -87,8 +75,6 @@ def check_h4895_midwayusa(browser):
     browser.find_element(By.CLASS_NAME, "product-filter-heading-container").click()
     elements = browser.find_elements(By.CLASS_NAME, "product-filter-status")
     if elements[0].text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("MidwayUSA has H4895 1 pound at " + url))
         mail("jschwabe515@gmail.com", ("MidwayUSA has H4895 1 pound at " + url))
     # 8-pound
@@ -97,8 +83,6 @@ def check_h4895_midwayusa(browser):
     browser.find_element(By.CLASS_NAME, "product-filter-heading-container").click()
     elements = browser.find_elements(By.CLASS_NAME, "product-filter-status")
     if elements[1].text != "Out of stock":
-        pass
-    else:
         mail("cshreck1@gmail.com", ("MidwayUSA has H4895 8 pound at " + url))
         mail("jschwabe515@gmail.com", ("MidwayUSA has H4895 8 pound at " + url))
 
