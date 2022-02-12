@@ -1,0 +1,2 @@
+envelopes~=0.4
+selenium~=4.1.0
